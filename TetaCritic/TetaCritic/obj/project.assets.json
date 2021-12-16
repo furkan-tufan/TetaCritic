@@ -6726,11 +6726,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\furka\\Desktop\\TetaCritic\\TetaCritic\\TetaCritic.csproj",
+      "projectUniqueName": "C:\\Users\\furka\\source\\repos\\TetaCritic\\TetaCritic\\TetaCritic.csproj",
       "projectName": "TetaCritic",
-      "projectPath": "C:\\Users\\furka\\Desktop\\TetaCritic\\TetaCritic\\TetaCritic.csproj",
+      "projectPath": "C:\\Users\\furka\\source\\repos\\TetaCritic\\TetaCritic\\TetaCritic.csproj",
       "packagesPath": "C:\\Users\\furka\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\furka\\Desktop\\TetaCritic\\TetaCritic\\obj\\",
+      "outputPath": "C:\\Users\\furka\\source\\repos\\TetaCritic\\TetaCritic\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

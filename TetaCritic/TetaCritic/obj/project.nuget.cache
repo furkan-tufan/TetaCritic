@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9yKxU4dlDkAEN24RQozRRAOhomllpV5FmEeFWO1j8AV5IEitZqnHZ8BE3CHYWWvFamcbQtBb6L6bgG1YUtQcbg==",
+  "dgSpecHash": "iKGWl8Xd3kEukBcBs2oI/gsi7NL69uXv7sMV7/si0ZixX26FCzKSBP928lBWN8rHFLCcku/4xRPAzsCfiyRSuw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\furka\\Desktop\\TetaCritic\\TetaCritic\\TetaCritic.csproj",
+  "projectFilePath": "C:\\Users\\furka\\source\\repos\\TetaCritic\\TetaCritic\\TetaCritic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\furka\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\furka\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.12\\microsoft.aspnetcore.cryptography.internal.5.0.12.nupkg.sha512",
