@@ -17,7 +17,7 @@ namespace TetaCritic.Models
         public List<string> Oyuncular = new List<string>();
 
         public int KategoriId{ get; set; }
-        Kategori Ktg;
+        public Kategori Ktg { get; set; }
 
-}
+    }
 }

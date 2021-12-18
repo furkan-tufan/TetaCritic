@@ -37,6 +37,7 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.12",
           "Microsoft.AspNetCore.Identity.UI": "5.0.12",
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "5.0.12",
+          "Microsoft.EntityFrameworkCore": "5.0.12",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.12",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.12",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
