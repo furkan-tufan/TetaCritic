@@ -1,0 +1,41 @@
+﻿@model IEnumerable<TetaCritic.Models.Kategori>
+
+@{
+    ViewData["Title"] = "Admin Paneli";
+}
+
+<p class="mt-5">
+    <a class="btn btn-danger " asp-action="Create">Yeni Film Ekle</a>
+    <a class="btn btn-danger ml-2" asp-controller="Kategori" asp-action="Create">Yeni Kategori Ekle</a>
+</p>
+
+<h4>Kategori Listesi</h4>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.KategoriAdi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KategoriAdi)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.KategoriId">Düzenle</a> |
+                    <a asp-action="Details" asp-route-id="@item.KategoriId">Detaylar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.KategoriId">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<p class="mt-5">
+<a class="btn btn-danger" asp-controller="Film" asp-action="Index">Filmleri Listele</a>
+</p>

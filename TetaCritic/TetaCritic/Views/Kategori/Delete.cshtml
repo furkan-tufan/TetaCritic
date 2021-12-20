@@ -1,0 +1,24 @@
+﻿@model TetaCritic.Models.Kategori
+
+@{
+    ViewData["Title"] = "Admin Paneli";
+}
+
+<h4 class="mt-5">Silmek istediğine emin misin?</h4>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KategoriAdi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KategoriAdi)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="KategoriId" />
+        <input type="submit" value="Sil" class="btn btn-danger" /> |
+        <a asp-action="Index">Kategorileri Listele</a>
+    </form>
+</div>

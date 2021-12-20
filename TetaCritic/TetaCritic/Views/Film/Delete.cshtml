@@ -1,0 +1,49 @@
+﻿@model TetaCritic.Models.Film
+
+@{
+    ViewData["Title"] = "Admin Paneli";
+}
+
+
+<h4 class="mt-5">Silmek istediğine emin misin?</h4>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FilmAdi)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FilmAdi)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Yonetmen)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Yonetmen)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ozet)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ozet)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.VizyonTarihi)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.VizyonTarihi)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ktg)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ktg.KategoriId)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="FilmId" />
+        <input type="submit" value="Sil" class="btn btn-danger" /> |
+        <a asp-action="Index"> Filmleri Listele</a>
+    </form>
+</div>

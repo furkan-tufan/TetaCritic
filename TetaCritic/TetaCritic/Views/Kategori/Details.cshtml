@@ -1,0 +1,23 @@
+﻿@model TetaCritic.Models.Kategori
+
+@{
+    ViewData["Title"] = "Admin Paneli";
+}
+
+<h4 class="mt-5">Detaylar</h4>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KategoriAdi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KategoriAdi)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.KategoriId">Düzenle</a> |
+    <a asp-action="Index">Kategorileri Listele</a>
+</div>

@@ -1,0 +1,50 @@
+﻿@model TetaCritic.Models.Film
+
+@{
+    ViewData["Title"] = "Admin Paneli";
+}
+
+<h4 class="mt-5">Film Oluştur</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FilmAdi" class="control-label"></label>
+                <input asp-for="FilmAdi" class="form-control" />
+                <span asp-validation-for="FilmAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Yonetmen" class="control-label"></label>
+                <input asp-for="Yonetmen" class="form-control" />
+                <span asp-validation-for="Yonetmen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ozet" class="control-label"></label>
+                <input asp-for="Ozet" class="form-control" />
+                <span asp-validation-for="Ozet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VizyonTarihi" class="control-label"></label>
+                <input asp-for="VizyonTarihi" class="form-control" />
+                <span asp-validation-for="VizyonTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KategoriId" class="control-label">Kategori</label>
+                <select asp-for="KategoriId" class="form-control" asp-items="ViewBag.KategoriId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Oluştur" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Filmleri Listele</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
