@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -36,6 +37,9 @@ namespace TetaCritic.Controllers
             var film = await _context.Filmler
                 .Include(f => f.Ktg)
                 .FirstOrDefaultAsync(m => m.FilmId == id);
+
+
+
             if (film == null)
             {
                 return NotFound();
@@ -56,7 +60,7 @@ namespace TetaCritic.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("FilmId,FilmAdi,Yonetmen,Ozet,VizyonTarihi,KategoriId")] Film film)
+        public async Task<IActionResult> Create([Bind("FilmId,FilmAdi,Yonetmen,Ozet,VizyonTarihi,KategoriId,Afis")] Film film)
         {
             if (ModelState.IsValid)
             {
@@ -65,6 +69,7 @@ namespace TetaCritic.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["KategoriId"] = new SelectList(_context.Kategoriler, "KategoriId", "KategoriAdi", film.KategoriId);
+           
             return View(film);
         }
 
@@ -90,7 +95,7 @@ namespace TetaCritic.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("FilmId,FilmAdi,Yonetmen,Ozet,VizyonTarihi,KategoriId")] Film film)
+        public async Task<IActionResult> Edit(int id, [Bind("FilmId,FilmAdi,Yonetmen,Ozet,VizyonTarihi,KategoriId, Afis")] Film film)
         {
             if (id != film.FilmId)
             {
@@ -117,7 +122,7 @@ namespace TetaCritic.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["KategoriId"] = new SelectList(_context.Kategoriler, "KategoriId", "KategoriId", film.KategoriId);
+            ViewData["KategoriId"] = new SelectList(_context.Kategoriler, "KategoriId", "KategoriAdi", film.KategoriId);
             return View(film);
         }
 

@@ -15,6 +15,7 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FilmAdi)
         </dd>
+
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Yonetmen)
         </dt>
@@ -37,7 +38,13 @@
             @Html.DisplayNameFor(model => model.Ktg)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Ktg.KategoriId)
+            @Html.DisplayFor(model => model.Ktg.KategoriAdi)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Afis)
+        </dt>
+        <dd class="col-sm-10">
+            <img src="@Url.Content(@Model.Afis)" />
         </dd>
     </dl>
 

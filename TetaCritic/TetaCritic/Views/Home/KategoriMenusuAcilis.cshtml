@@ -1,0 +1,35 @@
+﻿@{
+    IEnumerable<TetaCritic.Models.Kategori> kategoriler = ViewData["Kategoriler"] as IEnumerable<TetaCritic.Models.Kategori>;
+    IEnumerable<TetaCritic.Models.Film> filmler = ViewData["Filmler"] as IEnumerable<TetaCritic.Models.Film>;
+}
+
+<div class="row">
+    <div id="Kategoriler" class="list-group col-md-3">
+        @foreach (var ktg in kategoriler)
+        {
+            <a class="list-group-item list-group-item-action" asp-controller="Home" asp-action="KategoriMenusu" asp-route-id="@ktg.KategoriId"> @ktg.KategoriAdi</a>
+        }
+    </div>
+
+    <div id="Film Listesi" class="list-group col-md-9">
+        @foreach (var film in filmler)
+        {
+            <div class="card mb-3">
+                <div class="row no-gutters">
+                    <div class="col-md-3">
+                        <img src="@Url.Content(film.Afis)" />
+                    </div>
+                    <div class="col-md-9">
+                        <div class="card-body">
+                            <h4 class="card-title">@film.FilmAdi</h4>
+                            <h5 class="card-text"><b>Yönetmen:</b> @film.Yonetmen</h5>
+                            <h5 class="card-text"><b>Çıkış Yılı:</b> @film.VizyonTarihi</h5>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

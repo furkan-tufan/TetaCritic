@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -19,11 +20,17 @@ namespace TetaCritic.Models
         public string Ozet { get; set; }
         [Display(Name = "Çıkış Yılı")]
         public int VizyonTarihi { get; set; }
+        [Display(Name = "Afiş")]
+        public string Afis { get; set; }
         [Display(Name = "Oyuncu Kadrosu")]
-        public List<string> Oyuncular = new List<string>();
+        public ICollection<Oyuncu> Oyuncular { get; set; }
         [Display(Name = "Kategori")]
         public Kategori Ktg { get; set; }
         public int KategoriId{ get; set; }
 
+        public Film()
+        {
+            this.Oyuncular = new Collection<Oyuncu>();
+        }
     }
 }

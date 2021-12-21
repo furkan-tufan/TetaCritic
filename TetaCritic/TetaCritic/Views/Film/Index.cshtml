@@ -14,49 +14,59 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
+            <th style="width: 16%">
+                @Html.DisplayNameFor(model => model.Afis)
+            </th>
+            <th style="width: 10%">
                 @Html.DisplayNameFor(model => model.FilmAdi)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Yonetmen)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ozet)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.VizyonTarihi)
-            </th>
-            <th>
+            <th style="width: 10%">
                 @Html.DisplayNameFor(model => model.Ktg)
             </th>
+            <th style="width: 10%">
+                @Html.DisplayNameFor(model => model.Yonetmen)
+            </th>
+            <th style="width: 40%">
+                @Html.DisplayNameFor(model => model.Ozet)
+            </th>
+            <th style="width: 10%">
+                @Html.DisplayNameFor(model => model.VizyonTarihi)
+            </th>
+            <th style="width: 4%">
+                İşlemler
+            </th>
+
             <th></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FilmAdi)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Yonetmen)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Ozet)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VizyonTarihi)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Ktg.KategoriAdi)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.FilmId">Düzenle</a> |
-                    <a asp-action="Details" asp-route-id="@item.FilmId">Detaylar</a> |
-                    <a asp-action="Delete" asp-route-id="@item.FilmId">Sil</a>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                <img src="@Url.Content(item.Afis)" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FilmAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ktg.KategoriAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yonetmen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ozet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VizyonTarihi)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.FilmId">Düzenle</a>
+                <a asp-action="Details" asp-route-id="@item.FilmId">Detaylar</a>
+                <a asp-action="Delete" asp-route-id="@item.FilmId">Sil</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>

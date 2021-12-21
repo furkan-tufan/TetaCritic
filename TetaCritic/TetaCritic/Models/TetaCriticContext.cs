@@ -12,7 +12,6 @@ namespace TetaCritic.Models
         public DbSet<Film> Filmler { get; set; }
         public TetaCriticContext(DbContextOptions<TetaCriticContext> options) : base(options) {
 
-
         }
 
     }

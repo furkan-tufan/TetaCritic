@@ -446,3 +446,5 @@ C:\Users\furka\Desktop\TetaCritic\TetaCritic\obj\Debug\net5.0\Razor\Views\Film\D
 C:\Users\furka\Desktop\TetaCritic\TetaCritic\obj\Debug\net5.0\Razor\Views\Film\Details.cshtml.g.cs
 C:\Users\furka\Desktop\TetaCritic\TetaCritic\obj\Debug\net5.0\Razor\Views\Film\Edit.cshtml.g.cs
 C:\Users\furka\Desktop\TetaCritic\TetaCritic\obj\Debug\net5.0\Razor\Views\Film\Index.cshtml.g.cs
+C:\Users\furka\Desktop\TetaCritic\TetaCritic\obj\Debug\net5.0\Razor\Views\Home\KategoriMenusu.cshtml.g.cs
+C:\Users\furka\Desktop\TetaCritic\TetaCritic\obj\Debug\net5.0\Razor\Views\Home\KategoriMenusuAcilis.cshtml.g.cs

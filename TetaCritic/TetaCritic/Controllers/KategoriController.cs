@@ -34,8 +34,9 @@ namespace TetaCritic.Controllers
                 return NotFound();
             }
 
-            var kategori = await _context.Kategoriler
+            var kategori = await _context.Kategoriler.Include(m => m.FilmListesi)
                 .FirstOrDefaultAsync(m => m.KategoriId == id);
+
             if (kategori == null)
             {
                 return NotFound();

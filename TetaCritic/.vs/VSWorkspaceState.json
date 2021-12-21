@@ -2,11 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\TetaCritic",
-    "\\TetaCritic\\bin\\Debug",
-    "\\TetaCritic\\bin\\Debug\\net5.0",
-    "\\TetaCritic\\bin\\Release",
+    "\\TetaCritic\\Controllers",
     "\\TetaCritic\\Models",
-    "\\TetaCritic\\Views"
+    "\\TetaCritic\\Views",
+    "\\TetaCritic\\Views\\Film",
+    "\\TetaCritic\\Views\\Kategori"
   ],
   "SelectedNode": "\\TetaCritic.sln",
   "PreviewInSolutionExplorer": false
