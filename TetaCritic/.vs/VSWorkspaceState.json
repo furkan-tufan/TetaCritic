@@ -8,6 +8,6 @@
     "\\TetaCritic\\Views\\Film",
     "\\TetaCritic\\Views\\Kategori"
   ],
-  "SelectedNode": "\\TetaCritic.sln",
+  "SelectedNode": "\\TetaCritic\\Views\\Kategori\\Create.cshtml",
   "PreviewInSolutionExplorer": false
 }

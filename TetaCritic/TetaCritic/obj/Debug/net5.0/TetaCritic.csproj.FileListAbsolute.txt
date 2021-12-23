@@ -376,7 +376,6 @@ C:\Users\furka\Desktop\TetaCritic\TetaCritic\obj\Debug\net5.0\TetaCritic.TagHelp
 C:\Users\furka\Desktop\TetaCritic\TetaCritic\obj\Debug\net5.0\TetaCritic.TagHelpers.output.cache
 C:\Users\furka\Desktop\TetaCritic\TetaCritic\obj\Debug\net5.0\TetaCritic.RazorCoreGenerate.cache
 C:\Users\furka\Desktop\TetaCritic\TetaCritic\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
-C:\Users\furka\Desktop\TetaCritic\TetaCritic\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\furka\Desktop\TetaCritic\TetaCritic\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\furka\Desktop\TetaCritic\TetaCritic\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\furka\Desktop\TetaCritic\TetaCritic\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
@@ -447,3 +446,8 @@ C:\Users\furka\Desktop\TetaCritic\TetaCritic\obj\Debug\net5.0\Razor\Views\Film\E
 C:\Users\furka\Desktop\TetaCritic\TetaCritic\obj\Debug\net5.0\Razor\Views\Film\Index.cshtml.g.cs
 C:\Users\furka\Desktop\TetaCritic\TetaCritic\obj\Debug\net5.0\Razor\Views\Home\KategoriMenusu.cshtml.g.cs
 C:\Users\furka\Desktop\TetaCritic\TetaCritic\obj\Debug\net5.0\Razor\Views\Home\Anasayfa.cshtml.g.cs
+C:\Users\furka\Desktop\TetaCritic\TetaCritic\obj\Debug\net5.0\Razor\Views\Home\FilmSayfasi.cshtml.g.cs
+C:\Users\furka\Desktop\TetaCritic\TetaCritic\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
+C:\Users\furka\Desktop\TetaCritic\TetaCritic\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
+C:\Users\furka\Desktop\TetaCritic\TetaCritic\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\furka\Desktop\TetaCritic\TetaCritic\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs

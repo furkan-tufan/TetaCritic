@@ -1,0 +1,40 @@
+﻿@model TetaCritic.Models.Film
+@{
+    ViewData["Title"] = Model.FilmAdi;
+}
+
+<h1 class="mt-3">@Model.FilmAdi</h1>
+<div class="row mb-3 mt-3">
+    <div class="col-2">
+        <img src="@Url.Content(@Model.Afis)" />
+    </div>
+    <div class="col-10">
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Yonetmen)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Yonetmen)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.VizyonTarihi)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.VizyonTarihi)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Ktg)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Ktg.KategoriAdi)
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<h5>
+    @Html.DisplayNameFor(model => model.Ozet)
+</h5>
+<p>
+    @Html.DisplayFor(model => model.Ozet)
+</p>

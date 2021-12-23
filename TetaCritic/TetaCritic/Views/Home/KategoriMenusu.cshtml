@@ -2,10 +2,12 @@
 @{
     IEnumerable<TetaCritic.Models.Kategori> kategoriler = ViewData["Kategoriler"] as IEnumerable<TetaCritic.Models.Kategori>;
     IEnumerable<TetaCritic.Models.Film> filmler = ViewData["Filmler"] as IEnumerable<TetaCritic.Models.Film>;
+    ViewData["Title"] = "Kategoriler";
+
 }
 
-<div class="row mt-5">
-    <div class="list-group col-md-2">
+<div class="row mt-md-5">
+    <div class="list-group col-md-2 mb-3">
         @foreach (var ktg in kategoriler)
         {
             <a class="list-group-item list-group-item-action list-group-item-success" asp-controller="Home" asp-action="KategoriMenusu" asp-route-id="@ktg.KategoriId"> @ktg.KategoriAdi</a>
@@ -19,12 +21,12 @@
             {
                 <div class="card mb-3">
                     <div class="row no-gutters">
-                        <div class="col-md-2 mt-3 ml-2">
+                        <div class="col-lg-2">
                             <img src="@Url.Content(film.Afis)" />
                         </div>
-                        <div class="col-md-9">
+                        <div class="col-lg-10">
                             <div class="card-body">
-                                <h3 class="card-title">@film.FilmAdi</h3>
+                                <a  asp-controller="Home" asp-action="FilmSayfasi" asp-route-id="@film.FilmId"><h3 class="card-title">@film.FilmAdi</h3></a>
                                 <p class="card-text"><b>Yönetmen:</b> @film.Yonetmen</p>
                                 <p class="card-text"><b>Çıkış Yılı:</b> @film.VizyonTarihi</p>
                                 <p class="card-text"><b>Özet:</b> @film.Ozet</p>
@@ -40,12 +42,12 @@
             {
                 <div class="card mb-3">
                     <div class="row no-gutters">
-                        <div class="col-md-2 mt-3 ml-2">
+                        <div class="col-lg-2">
                             <img src="@Url.Content(film.Afis)" />
                         </div>
-                        <div class="col-md-9">
+                        <div class="col-lg-10">
                             <div class="card-body">
-                                <h3 class="card-title">@film.FilmAdi</h3>
+                                <a asp-controller="Home" asp-action="FilmSayfasi" asp-route-id="@film.FilmId"><h3 class="card-title">@film.FilmAdi</h3></a>
                                 <p class="card-text"><b>Yönetmen:</b> @film.Yonetmen</p>
                                 <p class="card-text"><b>Çıkış Yılı:</b> @film.VizyonTarihi</p>
                                 <p class="card-text"><b>Özet:</b> @film.Ozet</p>
