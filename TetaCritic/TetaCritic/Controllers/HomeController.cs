@@ -19,34 +19,18 @@ namespace TetaCritic.Controllers
             _context = context;
         }
 
-        public IActionResult KategoriMenusuAcilis()
-        {
-            ViewData["Filmler"] = _context.Filmler.ToList();
-            ViewData["Kategoriler"] = _context.Kategoriler.ToList();
-            return View();
-        }
-
         public async Task<IActionResult> KategoriMenusu(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
             var kategori = await _context.Kategoriler.Include(m => m.FilmListesi)
                 .FirstOrDefaultAsync(m => m.KategoriId == id);
-
-            if (kategori == null)
-            {
-                return NotFound();
-            }
+            ViewData["Filmler"] = _context.Filmler.ToList();
 
             ViewData["Kategoriler"] = _context.Kategoriler.ToList();
             return View(kategori);
         }
 
 
-        public IActionResult Index()
+        public IActionResult Anasayfa()
         {
             return View();
         }

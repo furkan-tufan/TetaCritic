@@ -13,8 +13,8 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow">
 
-            <a class="navbar-brand ml-5" asp-controller="Home" asp-action="Index">
-                <img src="~/images/logo.png" width="107.7" height="70.1" alt="">
+            <a class="navbar-brand ml-5" asp-controller="Home" asp-action="Anasayfa">
+                <img src="~/images/logo.png" width="108" height="70" alt="">
             </a>
             <div class="container">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -24,7 +24,7 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item ">
-                            <a class="nav-link text-white btn btn-lg" asp-area="" asp-controller="Home" asp-action="KategoriMenusuAcilis">Kategoriler  </a>
+                            <a class="nav-link text-white btn btn-lg" asp-area="" asp-controller="Home" asp-action="KategoriMenusu" asp-route-id="">Kategoriler  </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white btn btn-lg ml-2" asp-area="" asp-controller="" asp-action="">En İyi Filmler</a>
@@ -92,7 +92,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 footer-copyright">
-                        &copy; Copyright 2021 - All Rights Reserved </a>
+                        &copy; Copyright 2021 - All Rights Reserved
                     </div>
                     <div class="col-md-6 footer-social">
                         <a href="#"><i class="fa fa-facebook"></i></a>
