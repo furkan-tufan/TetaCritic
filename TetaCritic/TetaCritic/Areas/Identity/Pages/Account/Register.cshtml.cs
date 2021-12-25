@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using TetaCritic.Models;
 
 namespace TetaCritic.Areas.Identity.Pages.Account
 {
@@ -46,19 +47,19 @@ namespace TetaCritic.Areas.Identity.Pages.Account
         public class InputModel
         {
             [Required]
-            [EmailAddress]
-            [Display(Name = "Email")]
+            [EmailAddress(ErrorMessage ="Geçerli bir email giriniz!")]
+            [Display(Name = "E-Posta: ")]
             public string Email { get; set; }
 
             [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+            [StringLength(20, ErrorMessage = "Şifreniz en az 3 karakter, en fazla 20 karakter olmalıdır!")]
             [DataType(DataType.Password)]
-            [Display(Name = "Password")]
+            [Display(Name = "Şifre: ")]
             public string Password { get; set; }
 
             [DataType(DataType.Password)]
-            [Display(Name = "Confirm password")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Display(Name = "Şifrenizi tekrar giriniz: ")]
+            [Compare("Password", ErrorMessage = "Girdiğiniz şifreler uyuşmuyor!")]
             public string ConfirmPassword { get; set; }
         }
 
@@ -78,22 +79,22 @@ namespace TetaCritic.Areas.Identity.Pages.Account
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
-                    _logger.LogInformation("User created a new account with password.");
+                    _logger.LogInformation("Yeni Hesap Oluşturuldu!");
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                     var callbackUrl = Url.Page(
-                        "/Account/ConfirmEmail",
+                        "/Hesap/MailDogrula",
                         pageHandler: null,
                         values: new { area = "Identity", userId = user.Id, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
 
-                    await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
-                        $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                    await _emailSender.SendEmailAsync(Input.Email, "E-Posta adresini doğrula",
+                        $"Mail adresini doğrulamak için : <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>buraya tıkla</a>.");
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {
-                        return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
+                        return RedirectToPage("UyelikAktivasyonu", new { email = Input.Email, returnUrl = returnUrl });
                     }
                     else
                     {

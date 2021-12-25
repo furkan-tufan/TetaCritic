@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 using TetaCritic.Models;
 
 namespace TetaCritic.Controllers
@@ -21,12 +22,14 @@ namespace TetaCritic.Controllers
         }
 
         // GET: Kategori
+        [Authorize(Roles="Admin")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Kategoriler.ToListAsync());
         }
 
         // GET: Kategori/Details/5
+        [Authorize(Roles="Admin")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -46,6 +49,7 @@ namespace TetaCritic.Controllers
         }
 
         // GET: Kategori/Create
+        [Authorize(Roles="Admin")]
         public IActionResult Create()
         {
             return View();
@@ -56,6 +60,7 @@ namespace TetaCritic.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles="Admin")]
         public async Task<IActionResult> Create([Bind("KategoriId,KategoriAdi")] Kategori kategori)
         {
             if (ModelState.IsValid)
@@ -68,6 +73,7 @@ namespace TetaCritic.Controllers
         }
 
         // GET: Kategori/Edit/5
+        [Authorize(Roles="Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -88,6 +94,7 @@ namespace TetaCritic.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles="Admin")]
         public async Task<IActionResult> Edit(int id, [Bind("KategoriId,KategoriAdi")] Kategori kategori)
         {
             if (id != kategori.KategoriId)
@@ -119,6 +126,7 @@ namespace TetaCritic.Controllers
         }
 
         // GET: Kategori/Delete/5
+        [Authorize(Roles="Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -139,6 +147,7 @@ namespace TetaCritic.Controllers
         // POST: Kategori/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles="Admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var kategori = await _context.Kategoriler.FindAsync(id);

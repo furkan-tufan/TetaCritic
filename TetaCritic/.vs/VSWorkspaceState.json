@@ -2,12 +2,16 @@
   "ExpandedNodes": [
     "",
     "\\TetaCritic",
-    "\\TetaCritic\\Controllers",
-    "\\TetaCritic\\Models",
+    "\\TetaCritic\\Areas",
+    "\\TetaCritic\\Areas\\Identity",
+    "\\TetaCritic\\Areas\\Identity\\Pages",
+    "\\TetaCritic\\bin",
+    "\\TetaCritic\\Data",
+    "\\TetaCritic\\Data\\Migrations",
+    "\\TetaCritic\\Migrations",
     "\\TetaCritic\\Views",
-    "\\TetaCritic\\Views\\Film",
     "\\TetaCritic\\Views\\Kategori"
   ],
-  "SelectedNode": "\\TetaCritic\\Views\\Kategori\\Create.cshtml",
+  "SelectedNode": "\\TetaCritic.sln",
   "PreviewInSolutionExplorer": false
 }
