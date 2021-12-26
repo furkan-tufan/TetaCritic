@@ -1,0 +1,48 @@
+﻿@model IEnumerable<TetaCritic.Models.Yorum>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Icerik)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Zaman)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FilmId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Derece)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Icerik)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Zaman)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FilmId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Derece)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.YorumId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.YorumId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.YorumId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -22,15 +22,8 @@ namespace TetaCritic.Models
         public int VizyonTarihi { get; set; }
         [Display(Name = "Afiş")]
         public string Afis { get; set; }
-        [Display(Name = "Oyuncu Kadrosu")]
-        public ICollection<Oyuncu> Oyuncular { get; set; }
         [Display(Name = "Kategori")]
         public Kategori Ktg { get; set; }
         public int KategoriId{ get; set; }
-
-        public Film()
-        {
-            this.Oyuncular = new Collection<Oyuncu>();
-        }
     }
 }

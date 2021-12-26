@@ -10,6 +10,7 @@ namespace TetaCritic.Models
     {
         public DbSet<Kategori> Kategoriler { get; set; }
         public DbSet<Film> Filmler { get; set; }
+        public DbSet<Yorum> Yorum { get; set; }
         public TetaCriticContext(DbContextOptions<TetaCriticContext> options) : base(options) {
 
         }

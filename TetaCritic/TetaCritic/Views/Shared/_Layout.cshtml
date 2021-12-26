@@ -24,17 +24,20 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item ">
+                            <a class="nav-link text-white btn btn-lg" asp-area="" asp-controller="Home" asp-action="Anasayfa" asp-route-id="">Ana Sayfa  </a>
+                        </li>
+                        <li class="nav-item ">
                             <a class="nav-link text-white btn btn-lg" asp-area="" asp-controller="Home" asp-action="KategoriMenusu" asp-route-id="">Kategoriler  </a>
                         </li>
+
                         @if (User.Identity.IsAuthenticated)
                         {
-                            @if (User.IsInRole("Admin"))
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link text-white btn btn-lg ml-2" asp-area="" asp-controller="Film" asp-action="Index">Admin Paneli</a>
-                                </li>
-                            }
-                        }
+                    @if (User.IsInRole("Admin"))
+                    {
+                    <li class="nav-item">
+                        <a class="nav-link text-white btn btn-lg ml-2" asp-area="" asp-controller="Film" asp-action="Index">Admin Paneli</a>
+                    </li>
+}}
 
                     </ul>
                     <partial name="_LoginPartial" />

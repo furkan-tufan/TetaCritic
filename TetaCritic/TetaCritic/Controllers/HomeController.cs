@@ -29,8 +29,11 @@ namespace TetaCritic.Controllers
             return View(kategori);
         }
 
-        public async Task<IActionResult> FilmSayfasiAsync(int id)
+
+
+        public async Task<IActionResult> FilmSayfasiAsync(int? id)
         {
+
             if (id == null)
             {
                 return NotFound();
@@ -42,6 +45,24 @@ namespace TetaCritic.Controllers
             if (film == null)
             {
                 return NotFound();
+            }
+
+            ViewBag.FilmId = id;
+            var comments = _context.Yorum.Where(d => d.FilmId.Equals(id.Value)).ToList();
+            ViewBag.Comments = comments;
+
+            var ratings = _context.Yorum.Where(d => d.FilmId.Equals(id.Value)).ToList();
+            if (ratings.Count() > 0)
+            {
+                var ratingSum = ratings.Sum(d => d.Derece.Value);
+                ViewBag.RatingSum = ratingSum;
+                var ratingCount = ratings.Count();
+                ViewBag.RatingCount = ratingCount;
+            }
+            else
+            {
+                ViewBag.RatingSum = 0;
+                ViewBag.RatingCount = 0;
             }
 
             return View(film);

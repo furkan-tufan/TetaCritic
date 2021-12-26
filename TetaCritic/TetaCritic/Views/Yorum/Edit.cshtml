@@ -1,0 +1,40 @@
+﻿@model TetaCritic.Models.Yorum
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="YorumId" />
+            <div class="form-group">
+                <label asp-for="YorumId" class="control-label"></label>
+                <input asp-for="YorumId" class="form-control" />
+                <span asp-validation-for="YorumId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Zaman" class="control-label"></label>
+                <input asp-for="Zaman" class="form-control" />
+                <span asp-validation-for="Zaman" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FilmId" class="control-label"></label>
+                <input asp-for="FilmId" class="form-control" />
+                <span asp-validation-for="FilmId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Derece" class="control-label"></label>
+                <input asp-for="Derece" class="form-control" />
+                <span asp-validation-for="Derece" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+

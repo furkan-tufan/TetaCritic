@@ -1,7 +1,21 @@
 ﻿@model TetaCritic.Models.Film
-@{
-    ViewData["Title"] = Model.FilmAdi;
-}
+@{ ViewData["Title"] = Model.FilmAdi; }
+
+@{ ViewBag.Title = Model.FilmAdi;
+    var comments = (IEnumerable<TetaCritic.Models.Yorum>)ViewBag.Comments;
+    var ratingSum = ViewBag.RatingSum;
+    var ratingCount = ViewBag.RatingCount;
+
+    decimal rating = 0;
+    if (ratingCount > 0)
+    {
+        rating = (ratingSum / ratingCount);
+    }
+    var totalRating = decimal.Parse(rating.ToString()); }
+
+@*<div>
+    <span class="starFadeN" id="sRate1"></span><span class="starFadeN" id="sRate2"></span><span class="starFadeN" id="sRate3"></span><span class="starFadeN" id="sRate4"></span><span class="starFadeN" id="sRate5"></span>
+</div>*@
 
 <h1 class="mt-3">@Model.FilmAdi</h1>
 <div class="row mb-3 mt-3">
@@ -38,3 +52,40 @@
 <p>
     @Html.DisplayFor(model => model.Ozet)
 </p>
+<br />
+
+<h5>
+    Yorumlar
+</h5>
+@foreach (var c in comments)
+{
+<hr />
+<div class="row">
+    <div class="col-md-3">
+        <i>@c.Zaman</i>
+        <br />
+        @for (var i = 1; i <= c.Derece; i++){
+            <span class="starGlowN"></span>
+        }
+        @for (var i = (c.Derece + 1); i <= 5; i++) {
+            <span class="starFadeN"></span>
+        }
+    </div>
+    <div class="col-md-9">
+        @Html.Raw(c.Icerik.Replace("\n", "<br />"))
+    </div>
+</div>}
+<hr />
+<br />
+@Html.Partial("_CommentBox")
+
+<script>
+    function SCRate() {
+        for (var i = 1; i <= @totalRating; i++) {
+            $("#sRate" + i).attr('class', 'starGlowN');
+        }
+    }
+    $(function(){
+        SCRate();
+    });
+</script>
